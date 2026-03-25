@@ -36,6 +36,7 @@ class BootstrapWindowsWrapperTests(unittest.TestCase):
     def test_windows_wrapper_uses_zip_download_and_not_unix_bootstrap(self) -> None:
         wrapper = self._read_wrapper()
 
+        self.assertIn("GIT_SWEATY_BOOTSTRAP_ARCHIVE_URL", wrapper)
         self.assertIn("archive/refs/heads/$defaultBranch.zip", wrapper)
         self.assertIn("Invoke-WebRequest", wrapper)
         self.assertIn("Expand-Archive", wrapper)
@@ -46,6 +47,7 @@ class BootstrapWindowsWrapperTests(unittest.TestCase):
     def test_windows_wrapper_installs_python_and_gh_with_user_scope_first(self) -> None:
         wrapper = self._read_wrapper()
 
+        self.assertIn("GIT_SWEATY_BOOTSTRAP_ASSUME_YES", wrapper)
         self.assertIn('foreach ($scope in @("user", $null))', wrapper)
         self.assertIn('Invoke-WingetInstall "GitHub.cli" "GitHub CLI"', wrapper)
         self.assertIn('foreach ($packageId in @("Python.Python.3.13", "Python.Python.3.12"))', wrapper)

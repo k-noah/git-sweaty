@@ -33,6 +33,11 @@ function Read-YesNo {
         [string]$Default = "Y"
     )
 
+    $assumeYes = ($env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES | ForEach-Object { $_.Trim().ToLowerInvariant() })
+    if ($assumeYes -in @("1", "true", "yes", "y")) {
+        return $true
+    }
+
     $suffix = if ($Default -eq "Y") { "[Y/n]" } else { "[y/N]" }
     while ($true) {
         $answer = Read-Host "$Prompt $suffix"
@@ -538,8 +543,11 @@ function Invoke-OnlineSetup {
         [string[]]$Args
     )
 
-    $defaultBranch = Get-DefaultBranch -GhPath $GhPath -Repo $UpstreamRepo
-    $archiveUrl = "https://github.com/$UpstreamRepo/archive/refs/heads/$defaultBranch.zip"
+    $archiveUrl = $env:GIT_SWEATY_BOOTSTRAP_ARCHIVE_URL
+    if ([string]::IsNullOrWhiteSpace($archiveUrl)) {
+        $defaultBranch = Get-DefaultBranch -GhPath $GhPath -Repo $UpstreamRepo
+        $archiveUrl = "https://github.com/$UpstreamRepo/archive/refs/heads/$defaultBranch.zip"
+    }
     $tempRoot = New-TemporaryDirectory
     $archivePath = Join-Path $tempRoot "source.zip"
     $extractDir = Join-Path $tempRoot "source"
