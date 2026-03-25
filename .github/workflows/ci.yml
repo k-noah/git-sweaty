@@ -9,16 +9,18 @@ on:
 jobs:
   python-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Run test suite
-        run: python -m unittest discover -s tests
+        run: python -m unittest discover -s tests -v
 
   windows-bootstrap-smoke:
     runs-on: windows-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,13 +33,17 @@ jobs:
 
           $fixtureRoot = Join-Path $env:RUNNER_TEMP "windows-bootstrap-fixture"
           $archiveDir = Join-Path $fixtureRoot "archive"
+          $archiveSourceRoot = Join-Path $fixtureRoot "archive-source"
+          $archiveSourceRepo = Join-Path $archiveSourceRoot "git-sweaty-main"
           $fakeBin = Join-Path $fixtureRoot "fake-bin"
           $zipPath = Join-Path $archiveDir "git-sweaty.zip"
           $pyLog = Join-Path $fixtureRoot "py-invocation.log"
 
           New-Item -ItemType Directory -Path $archiveDir -Force | Out-Null
+          New-Item -ItemType Directory -Path $archiveSourceRepo -Force | Out-Null
           New-Item -ItemType Directory -Path $fakeBin -Force | Out-Null
-          Compress-Archive -Path (Join-Path $env:GITHUB_WORKSPACE "*") -DestinationPath $zipPath -Force
+          Copy-Item -Path (Join-Path $env:GITHUB_WORKSPACE "*") -Destination $archiveSourceRepo -Recurse -Force
+          Compress-Archive -Path $archiveSourceRepo -DestinationPath $zipPath -Force
 
           $ghShim = @'
           @echo off
