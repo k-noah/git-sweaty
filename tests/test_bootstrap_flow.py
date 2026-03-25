@@ -42,7 +42,7 @@ if [[ "${1:-}" == "auth" && "${2:-}" == "login" ]]; then
   exit 0
 fi
 if [[ "${1:-}" == "api" && "${2:-}" == "user" ]]; then
-  echo "tester"
+  echo "${FAKE_GH_USER_LOGIN:-tester}"
   exit 0
 fi
 if [[ "${1:-}" == "api" && "${2:-}" == "repos/aspain/git-sweaty/forks?per_page=100" ]]; then
@@ -73,8 +73,21 @@ fi
 if [[ "${1:-}" == "repo" && "${2:-}" == "fork" ]]; then
   exit 0
 fi
+if [[ "${1:-}" == "repo" && "${2:-}" == "create" ]]; then
+  if [[ -n "${FAKE_GH_CREATED_REPOS_FILE:-}" ]]; then
+    echo "${3:-}" >> "${FAKE_GH_CREATED_REPOS_FILE}"
+  fi
+  exit 0
+fi
 if [[ "${1:-}" == "repo" && "${2:-}" == "view" ]]; then
   target="${3:-}"
+  if [[ -n "${FAKE_GH_CREATED_REPOS_FILE:-}" && -f "${FAKE_GH_CREATED_REPOS_FILE}" ]]; then
+    while IFS= read -r created_repo; do
+      if [[ "${target}" == "${created_repo}" ]]; then
+        exit 0
+      fi
+    done < "${FAKE_GH_CREATED_REPOS_FILE}"
+  fi
   if [[ -n "${FAKE_REPO_VIEW_FAIL_FOR:-}" ]]; then
     IFS=',' read -r -a failures <<< "${FAKE_REPO_VIEW_FAIL_FOR}"
     for candidate in "${failures[@]}"; do
@@ -903,6 +916,95 @@ exit 0
             with open(py_log, "r", encoding="utf-8") as f:
                 py_calls = f.read()
             self.assertIn("/scripts/setup_auth.py --repo tester/sweaty-online", py_calls)
+
+    def test_bootstrap_online_mode_for_upstream_owner_creates_separate_repo_instead_of_fork(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            fake_bin, git_log, py_log = self._make_fake_bin(tmpdir)
+            run_dir = os.path.join(tmpdir, "runner")
+            os.makedirs(run_dir, exist_ok=True)
+
+            gh_log = os.path.join(tmpdir, "gh.log")
+            curl_log = os.path.join(tmpdir, "curl.log")
+            env = os.environ.copy()
+            env["PATH"] = f"{fake_bin}:{env['PATH']}"
+            env["FAKE_GIT_LOG"] = git_log
+            env["FAKE_GH_LOG"] = gh_log
+            env["FAKE_CURL_LOG"] = curl_log
+            env["FAKE_TAR_LOG"] = os.path.join(tmpdir, "tar.log")
+            env["FAKE_PY_LOG"] = py_log
+            env["FAKE_GH_USER_LOGIN"] = "aspain"
+            env["FAKE_GH_CREATED_REPOS_FILE"] = os.path.join(tmpdir, "created-repos.log")
+            env["FAKE_REPO_VIEW_FAIL_FOR"] = "aspain/git-sweaty-dashboard,aspain/git-sweaty,aspain/sweaty-test"
+
+            proc = subprocess.run(
+                ["bash", BOOTSTRAP_PATH],
+                input="1\ny\ny\nsweaty-test\n",
+                text=True,
+                capture_output=True,
+                cwd=run_dir,
+                env=env,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, msg=f"{proc.stdout}\n{proc.stderr}")
+
+            output = f"{proc.stdout}\n{proc.stderr}"
+            self.assertIn("GitHub cannot fork a repository into the same account.", output)
+            self.assertIn("Creating new public repository: aspain/sweaty-test", output)
+
+            with open(gh_log, "r", encoding="utf-8") as f:
+                gh_calls = f.read()
+            self.assertNotIn("repo fork aspain/git-sweaty", gh_calls)
+            self.assertIn("repo create aspain/sweaty-test --public", gh_calls)
+            self.assertIn("repo view aspain/sweaty-test", gh_calls)
+
+            with open(py_log, "r", encoding="utf-8") as f:
+                py_calls = f.read()
+            self.assertIn("/scripts/setup_auth.py --repo aspain/sweaty-test", py_calls)
+
+    def test_bootstrap_online_mode_with_existing_fork_can_create_separate_repo_for_second_copy(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            fake_bin, git_log, py_log = self._make_fake_bin(tmpdir)
+            run_dir = os.path.join(tmpdir, "runner")
+            os.makedirs(run_dir, exist_ok=True)
+
+            gh_log = os.path.join(tmpdir, "gh.log")
+            curl_log = os.path.join(tmpdir, "curl.log")
+            env = os.environ.copy()
+            env["PATH"] = f"{fake_bin}:{env['PATH']}"
+            env["FAKE_GIT_LOG"] = git_log
+            env["FAKE_GH_LOG"] = gh_log
+            env["FAKE_CURL_LOG"] = curl_log
+            env["FAKE_TAR_LOG"] = os.path.join(tmpdir, "tar.log")
+            env["FAKE_PY_LOG"] = py_log
+            env["FAKE_GH_USER_LOGIN"] = "tester"
+            env["FAKE_GH_REPO_LIST_OUTPUT"] = "tester/git-sweaty"
+            env["FAKE_GH_CREATED_REPOS_FILE"] = os.path.join(tmpdir, "created-repos.log")
+            env["FAKE_REPO_VIEW_FAIL_FOR"] = "tester/git-sweaty-dashboard,tester/sweaty-copy"
+
+            proc = subprocess.run(
+                ["bash", BOOTSTRAP_PATH],
+                input="1\ny\nn\ny\ny\nsweaty-copy\n",
+                text=True,
+                capture_output=True,
+                cwd=run_dir,
+                env=env,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, msg=f"{proc.stdout}\n{proc.stderr}")
+
+            output = f"{proc.stdout}\n{proc.stderr}"
+            self.assertIn("Found existing fork: tester/git-sweaty", output)
+            self.assertIn("GitHub only allows one fork of aspain/git-sweaty per account.", output)
+            self.assertIn("Creating new public repository: tester/sweaty-copy", output)
+
+            with open(gh_log, "r", encoding="utf-8") as f:
+                gh_calls = f.read()
+            self.assertNotIn("repo fork aspain/git-sweaty --clone=false --remote=false --fork-name sweaty-copy", gh_calls)
+            self.assertIn("repo create tester/sweaty-copy --public", gh_calls)
+
+            with open(py_log, "r", encoding="utf-8") as f:
+                py_calls = f.read()
+            self.assertIn("/scripts/setup_auth.py --repo tester/sweaty-copy", py_calls)
 
     def test_bootstrap_defaults_to_online_mode(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

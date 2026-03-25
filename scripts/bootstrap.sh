@@ -140,6 +140,26 @@ prompt_fork_name() {
   done
 }
 
+prompt_repo_name() {
+  local prompt_label="$1"
+  local default_name="$2"
+  local answer
+
+  while true; do
+    read -r -p "${prompt_label} (repo only, default: ${default_name}): " answer || return 1
+    answer="$(trim_whitespace "$answer")"
+    if [[ -z "$answer" ]]; then
+      answer="$default_name"
+    fi
+
+    if [[ "$answer" =~ ^[A-Za-z0-9._-]+$ ]]; then
+      printf '%s\n' "$answer"
+      return 0
+    fi
+    warn "Invalid repository name. Use only letters, numbers, '.', '_' or '-'."
+  done
+}
+
 is_valid_repo_slug() {
   local slug="$1"
   [[ "$slug" =~ ^[^/[:space:]]+/[^/[:space:]]+$ ]]
@@ -429,6 +449,11 @@ repo_name_from_slug() {
   printf '%s\n' "${slug##*/}"
 }
 
+repo_owner_from_slug() {
+  local slug="$1"
+  printf '%s\n' "${slug%%/*}"
+}
+
 discover_existing_fork_repo() {
   local login="$1"
   local upstream_repo="$2"
@@ -516,6 +541,8 @@ ensure_fork_exists() {
       BOOTSTRAP_SELECTED_FORK_REPO="$existing_fork"
       return 0
     fi
+
+    fail "GitHub only allows one fork of ${upstream_repo} per account. Reuse ${existing_fork}, or use Recommended online-only mode to create a separate non-fork repository."
   fi
 
   default_fork_name="$(repo_name_from_slug "$upstream_repo")"
@@ -759,10 +786,36 @@ fork_and_clone() {
   BOOTSTRAP_SELECTED_REPO_DIR="$repo_dir"
 }
 
+create_or_use_repo_for_login() {
+  local login="$1"
+  local default_repo_name="$2"
+  local repo_name repo_slug can_push
+
+  if prompt_yes_no "Use a custom name for your new repository?" "N"; then
+    repo_name="$(prompt_repo_name "Repository name" "$default_repo_name")"
+  else
+    repo_name="$default_repo_name"
+  fi
+
+  repo_slug="${login}/${repo_name}"
+  if gh repo view "$repo_slug" >/dev/null 2>&1; then
+    can_push="$(gh api "repos/${repo_slug}" --jq '.permissions.push' 2>/dev/null || true)"
+    [[ "$can_push" == "true" ]] || fail "Current gh account does not have write access to: $repo_slug"
+    printf 'Using existing repository: %s\n' "$repo_slug" >&2
+    printf '%s\n' "$repo_slug"
+    return 0
+  fi
+
+  printf 'Creating new public repository: %s\n' "$repo_slug" >&2
+  gh repo create "$repo_slug" --public >/dev/null 2>&1 || fail "Unable to create repository: $repo_slug"
+  gh repo view "$repo_slug" >/dev/null 2>&1 || fail "Repository is not accessible after creation: $repo_slug"
+  printf '%s\n' "$repo_slug"
+}
+
 run_online_setup() {
   local upstream_repo="$1"
   shift || true
-  local login target_repo default_branch archive_url tmp_dir archive_path extract_dir extracted_root setup_script status
+  local login target_repo default_branch archive_url tmp_dir archive_path extract_dir extracted_root setup_script status upstream_owner default_repo_name existing_fork
 
   require_cmd curl
   require_cmd python3
@@ -771,13 +824,40 @@ run_online_setup() {
 
   login="$(gh api user --jq .login 2>/dev/null || true)"
   [[ -n "$login" ]] || fail "Unable to resolve GitHub username from current gh auth session."
+  upstream_owner="$(repo_owner_from_slug "$upstream_repo")"
+  default_repo_name="$(repo_name_from_slug "$upstream_repo")-dashboard"
 
-  if prompt_yes_no "Create/use a fork in your GitHub account first? (recommended)" "Y"; then
-    ensure_fork_exists "$upstream_repo" "Y"
-    target_repo="$BOOTSTRAP_SELECTED_FORK_REPO"
+  if [[ "$login" == "$upstream_owner" ]]; then
+    info "You are signed into the upstream owner account (${login}). GitHub cannot fork a repository into the same account."
+    if prompt_yes_no "Create or reuse a separate repository in ${login} instead? (recommended)" "Y"; then
+      target_repo="$(create_or_use_repo_for_login "$login" "$default_repo_name")"
+    else
+      target_repo="$(prompt_repo_slug "" "$login")"
+    fi
   else
-    info "Using non-fork mode: target repository must be writable by the current gh account."
-    target_repo="$(prompt_repo_slug "$(detect_existing_fork_repo "$upstream_repo" "$login" || true)" "$login")"
+    if prompt_yes_no "Create/use a fork in your GitHub account first? (recommended)" "Y"; then
+      existing_fork="$(detect_existing_fork_repo "$upstream_repo" "$login" || true)"
+      if [[ -n "$existing_fork" ]]; then
+        info "Found existing fork: $existing_fork"
+        if prompt_yes_no "Use this fork?" "Y"; then
+          target_repo="$existing_fork"
+        else
+          info "GitHub only allows one fork of ${upstream_repo} per account."
+          if prompt_yes_no "Create or reuse a separate non-fork repository in ${login} instead?" "Y"; then
+            target_repo="$(create_or_use_repo_for_login "$login" "$default_repo_name")"
+          else
+            info "Using non-fork mode: target repository must be writable by the current gh account."
+            target_repo="$(prompt_repo_slug "" "$login")"
+          fi
+        fi
+      else
+        ensure_fork_exists "$upstream_repo" "Y"
+        target_repo="$BOOTSTRAP_SELECTED_FORK_REPO"
+      fi
+    else
+      info "Using non-fork mode: target repository must be writable by the current gh account."
+      target_repo="$(prompt_repo_slug "$(detect_existing_fork_repo "$upstream_repo" "$login" || true)" "$login")"
+    fi
   fi
 
   info ""
