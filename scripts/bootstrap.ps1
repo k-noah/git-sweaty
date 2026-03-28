@@ -653,12 +653,16 @@ function Invoke-OnlineSetup {
             $pythonArgs += $SetupArgs
         }
 
-        $process = Start-Process -FilePath $PythonRuntime.Command `
-            -ArgumentList $pythonArgs `
-            -NoNewWindow `
-            -Wait `
-            -PassThru
-        return $process.ExitCode
+        Push-Location $sourceRoot.FullName
+        try {
+            & $PythonRuntime.Command @pythonArgs
+            if ($null -ne $LASTEXITCODE) {
+                return [int]$LASTEXITCODE
+            }
+            return 0
+        } finally {
+            Pop-Location
+        }
     } finally {
         Remove-Item -Path $tempRoot -Recurse -Force -ErrorAction SilentlyContinue
     }

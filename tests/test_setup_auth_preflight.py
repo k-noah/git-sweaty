@@ -233,6 +233,34 @@ class SetupAuthBootstrapEnvTests(unittest.TestCase):
             ],
         )
 
+    def test_bootstrap_env_surfaces_missing_child_launch_path(self) -> None:
+        args = Namespace(no_bootstrap_env=False, env_bootstrapped=False)
+        venv_python = "/repo/.venv/bin/python"
+        requirements = "/repo/requirements.txt"
+        script_path = "/repo/scripts/setup_auth.py"
+
+        def fake_exists(path: str) -> bool:
+            return path in {requirements, venv_python}
+
+        with (
+            mock.patch("setup_auth._in_virtualenv", return_value=False),
+            mock.patch("setup_auth._project_root", return_value="/repo"),
+            mock.patch("setup_auth._venv_python_path", return_value=venv_python),
+            mock.patch("setup_auth.os.path.exists", side_effect=fake_exists),
+            mock.patch("setup_auth._ensure_venv_pip"),
+            mock.patch("setup_auth._run_stream"),
+            mock.patch("setup_auth.subprocess.call", side_effect=FileNotFoundError(2, "No such file", script_path)),
+            mock.patch("setup_auth.__file__", script_path),
+            mock.patch("setup_auth.sys.argv", ["setup_auth.py"]),
+        ):
+            with self.assertRaises(RuntimeError) as exc_ctx:
+                setup_auth._bootstrap_env_and_reexec(args)
+
+        message = str(exc_ctx.exception)
+        self.assertIn("Unable to re-launch setup inside .venv", message)
+        self.assertIn(venv_python, message)
+        self.assertIn(script_path, message)
+
 
 class SetupAuthDispatchTests(unittest.TestCase):
     def test_existing_dashboard_source_normalizes_supported_values(self) -> None:

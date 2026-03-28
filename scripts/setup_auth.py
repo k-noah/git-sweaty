@@ -468,7 +468,15 @@ def _bootstrap_env_and_reexec(args: argparse.Namespace) -> None:
     child_args = [arg for arg in sys.argv[1:] if arg != "--env-bootstrapped"]
     child_args.append("--env-bootstrapped")
     print("Re-launching setup inside .venv...")
-    raise SystemExit(subprocess.call([venv_python, script_path, *child_args], cwd=root))
+    try:
+        raise SystemExit(subprocess.call([venv_python, script_path, *child_args], cwd=root))
+    except FileNotFoundError as exc:
+        missing_path = getattr(exc, "filename", "") or venv_python
+        raise RuntimeError(
+            "Unable to re-launch setup inside .venv because a required file was not found. "
+            f"Expected interpreter: {venv_python}; expected setup script: {script_path}; "
+            f"missing path reported by the OS: {missing_path}"
+        ) from exc
 
 
 def _set_secret(name: str, value: str, repo: str) -> None:
