@@ -10749,5 +10749,18 @@
     "start_date_local": "2026-04-05T09:02:48Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-04-05",
+    "distance": 18011.0,
+    "elevation_gain": 85.0,
+    "id": "17990168309",
+    "moving_time": 7011.0,
+    "name": "Run off the bike",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-05T10:43:07Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
