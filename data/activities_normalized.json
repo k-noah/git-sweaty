@@ -10827,5 +10827,44 @@
     "start_date_local": "2026-04-10T07:37:15Z",
     "type": "Swim",
     "year": 2026
+  },
+  {
+    "date": "2026-04-11",
+    "distance": 80339.8,
+    "elevation_gain": 330.0,
+    "id": "18068291595",
+    "moving_time": 13051.0,
+    "name": "First outside ride of the year!",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-11T07:48:42Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 30918.0,
+    "elevation_gain": 0.0,
+    "id": "18078940021",
+    "moving_time": 4584.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-12T07:01:26Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18079005693",
+    "moving_time": 4414.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-12T07:03:56Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]

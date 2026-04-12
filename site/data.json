@@ -7496,6 +7496,33 @@
       "type": "Swim",
       "url": "https://www.strava.com/activities/18052983556",
       "year": 2026
+    },
+    {
+      "date": "2026-04-11",
+      "hour": 7,
+      "name": "First outside ride of the year!",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18068291595",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-12",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18078940021",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-12",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18079005693",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13685,6 +13712,25 @@
           "distance": 27022.0,
           "elevation_gain": 0.0,
           "moving_time": 7291.0
+        },
+        "2026-04-11": {
+          "activity_ids": [
+            "18068291595"
+          ],
+          "count": 1,
+          "distance": 80339.8,
+          "elevation_gain": 330.0,
+          "moving_time": 13051.0
+        },
+        "2026-04-12": {
+          "activity_ids": [
+            "18078940021",
+            "18079005693"
+          ],
+          "count": 2,
+          "distance": 30918.0,
+          "elevation_gain": 0.0,
+          "moving_time": 8998.0
         }
       },
       "Run": {
@@ -14363,7 +14409,7 @@
       }
     }
   },
-  "generated_at": "2026-04-11T15:28:15.751573+00:00",
+  "generated_at": "2026-04-12T15:31:39.420360+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
