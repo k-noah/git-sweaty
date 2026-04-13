@@ -10866,5 +10866,18 @@
     "start_date_local": "2026-04-12T07:03:56Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 20006.5,
+    "elevation_gain": 77.0,
+    "id": "18081739452",
+    "moving_time": 9083.0,
+    "name": "Brick run, slow and steady",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-12T09:02:30Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
