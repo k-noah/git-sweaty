@@ -7541,6 +7541,24 @@
       "type": "Yoga",
       "url": "https://www.strava.com/activities/18098682271",
       "year": 2026
+    },
+    {
+      "date": "2026-04-14",
+      "hour": 18,
+      "name": "Evening Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18111235578",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-14",
+      "hour": 18,
+      "name": "Evening Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18111316360",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13749,6 +13767,16 @@
           "distance": 30918.0,
           "elevation_gain": 0.0,
           "moving_time": 8998.0
+        },
+        "2026-04-14": {
+          "activity_ids": [
+            "18111235578",
+            "18111316360"
+          ],
+          "count": 2,
+          "distance": 15651.0,
+          "elevation_gain": 0.0,
+          "moving_time": 4659.0
         }
       },
       "Run": {
@@ -14445,7 +14473,7 @@
       }
     }
   },
-  "generated_at": "2026-04-14T16:04:00.147089+00:00",
+  "generated_at": "2026-04-15T16:01:38.704196+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
