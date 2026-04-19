@@ -10957,5 +10957,18 @@
     "start_date_local": "2026-04-17T15:23:10Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-04-18",
+    "distance": 4614.6,
+    "elevation_gain": 21.0,
+    "id": "18160763213",
+    "moving_time": 1991.0,
+    "name": "Social run with a friend",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-18T11:33:20Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
