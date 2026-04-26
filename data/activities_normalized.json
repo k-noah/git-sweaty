@@ -11055,11 +11055,50 @@
     "elevation_gain": 858.0,
     "id": "18253990052",
     "moving_time": 12422.0,
-    "name": "Morning Ride",
+    "name": "Gatineau park ride",
     "raw_activity_type": "Ride",
     "raw_type": "Ride",
     "start_date_local": "2026-04-25T07:53:41Z",
     "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-26",
+    "distance": 38257.0,
+    "elevation_gain": 0.0,
+    "id": "18265515061",
+    "moving_time": 5615.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-26T07:03:07Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-26",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18265538965",
+    "moving_time": 5237.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-26T07:09:25Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-26",
+    "distance": 12606.5,
+    "elevation_gain": 32.0,
+    "id": "18267080072",
+    "moving_time": 5162.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-26T08:52:19Z",
+    "type": "Run",
     "year": 2026
   }
 ]

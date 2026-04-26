@@ -7653,10 +7653,37 @@
     {
       "date": "2026-04-25",
       "hour": 7,
-      "name": "Morning Ride",
+      "name": "Gatineau park ride",
       "subtype": "Ride",
       "type": "Ride",
       "url": "https://www.strava.com/activities/18253990052",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-26",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18265515061",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-26",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18265538965",
+      "year": 2026
+    },
+    {
+      "date": "2026-04-26",
+      "hour": 8,
+      "name": "Morning Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18267080072",
       "year": 2026
     }
   ],
@@ -13913,6 +13940,16 @@
           "distance": 68836.4,
           "elevation_gain": 858.0,
           "moving_time": 12422.0
+        },
+        "2026-04-26": {
+          "activity_ids": [
+            "18265515061",
+            "18265538965"
+          ],
+          "count": 2,
+          "distance": 38257.0,
+          "elevation_gain": 0.0,
+          "moving_time": 10852.0
         }
       },
       "Run": {
@@ -14239,6 +14276,15 @@
           "distance": 5189.1,
           "elevation_gain": 28.0,
           "moving_time": 1880.0
+        },
+        "2026-04-26": {
+          "activity_ids": [
+            "18267080072"
+          ],
+          "count": 1,
+          "distance": 12606.5,
+          "elevation_gain": 32.0,
+          "moving_time": 5162.0
         }
       },
       "Swim": {
@@ -14663,7 +14709,7 @@
       }
     }
   },
-  "generated_at": "2026-04-25T15:35:24.978200+00:00",
+  "generated_at": "2026-04-26T15:37:54.399645+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
