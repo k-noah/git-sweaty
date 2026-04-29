@@ -11113,5 +11113,44 @@
     "start_date_local": "2026-04-27T20:02:47Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-04-28",
+    "distance": 23052.0,
+    "elevation_gain": 0.0,
+    "id": "18298920756",
+    "moving_time": 3326.0,
+    "name": "Evening Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-28T18:00:22Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-28",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18298928638",
+    "moving_time": 3039.0,
+    "name": "Evening Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-28T18:04:48Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-29",
+    "distance": 1760.0,
+    "elevation_gain": 0.0,
+    "id": "18305282015",
+    "moving_time": 2218.0,
+    "name": "Morning Swim",
+    "raw_activity_type": "Swim",
+    "raw_type": "Swim",
+    "start_date_local": "2026-04-29T07:38:36Z",
+    "type": "Swim",
+    "year": 2026
   }
 ]
