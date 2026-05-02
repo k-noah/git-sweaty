@@ -11152,5 +11152,18 @@
     "start_date_local": "2026-04-29T07:38:36Z",
     "type": "Swim",
     "year": 2026
+  },
+  {
+    "date": "2026-05-01",
+    "distance": 1518.0,
+    "elevation_gain": 0.0,
+    "id": "18338259601",
+    "moving_time": 1761.0,
+    "name": "Afternoon Swim",
+    "raw_activity_type": "Swim",
+    "raw_type": "Swim",
+    "start_date_local": "2026-05-01T16:11:56Z",
+    "type": "Swim",
+    "year": 2026
   }
 ]
