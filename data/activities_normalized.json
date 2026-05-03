@@ -11165,5 +11165,31 @@
     "start_date_local": "2026-05-01T16:11:56Z",
     "type": "Swim",
     "year": 2026
+  },
+  {
+    "date": "2026-05-03",
+    "distance": 10284.3,
+    "elevation_gain": 34.0,
+    "id": "18357438942",
+    "moving_time": 1533.0,
+    "name": "Ride to CN Cycle",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-03T06:14:42Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-03",
+    "distance": 94169.6,
+    "elevation_gain": 583.0,
+    "id": "18361339826",
+    "moving_time": 13845.0,
+    "name": "CN Cycle Century Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-03T07:07:34Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]

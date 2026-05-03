@@ -7730,6 +7730,24 @@
       "type": "Swim",
       "url": "https://www.strava.com/activities/18338259601",
       "year": 2026
+    },
+    {
+      "date": "2026-05-03",
+      "hour": 6,
+      "name": "Ride to CN Cycle",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18357438942",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-03",
+      "hour": 7,
+      "name": "CN Cycle Century Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18361339826",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14005,6 +14023,16 @@
           "distance": 23052.0,
           "elevation_gain": 0.0,
           "moving_time": 6365.0
+        },
+        "2026-05-03": {
+          "activity_ids": [
+            "18357438942",
+            "18361339826"
+          ],
+          "count": 2,
+          "distance": 104453.90000000001,
+          "elevation_gain": 617.0,
+          "moving_time": 15378.0
         }
       },
       "Run": {
@@ -14791,7 +14819,7 @@
       }
     }
   },
-  "generated_at": "2026-05-02T15:40:53.670729+00:00",
+  "generated_at": "2026-05-03T15:41:26.034750+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
