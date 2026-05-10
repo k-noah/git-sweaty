@@ -7802,6 +7802,42 @@
       "type": "Swim",
       "url": "https://www.strava.com/activities/18430158874",
       "year": 2026
+    },
+    {
+      "date": "2026-05-09",
+      "hour": 7,
+      "name": "Wakefield Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18441626977",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-10",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18451682767",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-10",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18451703476",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-10",
+      "hour": 8,
+      "name": "Morning Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18453447864",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14087,6 +14123,25 @@
           "distance": 104453.90000000001,
           "elevation_gain": 617.0,
           "moving_time": 15378.0
+        },
+        "2026-05-09": {
+          "activity_ids": [
+            "18441626977"
+          ],
+          "count": 1,
+          "distance": 89389.8,
+          "elevation_gain": 791.0,
+          "moving_time": 15688.0
+        },
+        "2026-05-10": {
+          "activity_ids": [
+            "18451682767",
+            "18451703476"
+          ],
+          "count": 2,
+          "distance": 33298.0,
+          "elevation_gain": 0.0,
+          "moving_time": 9224.0
         }
       },
       "Run": {
@@ -14449,6 +14504,15 @@
           "distance": 9554.3,
           "elevation_gain": 64.0,
           "moving_time": 3637.0
+        },
+        "2026-05-10": {
+          "activity_ids": [
+            "18453447864"
+          ],
+          "count": 1,
+          "distance": 16043.0,
+          "elevation_gain": 87.0,
+          "moving_time": 6604.0
         }
       },
       "Swim": {
@@ -14927,7 +14991,7 @@
       }
     }
   },
-  "generated_at": "2026-05-09T15:44:38.856433+00:00",
+  "generated_at": "2026-05-10T15:46:02.173327+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",

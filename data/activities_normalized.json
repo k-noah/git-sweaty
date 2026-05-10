@@ -11269,5 +11269,57 @@
     "start_date_local": "2026-05-08T16:02:40Z",
     "type": "Swim",
     "year": 2026
+  },
+  {
+    "date": "2026-05-09",
+    "distance": 89389.8,
+    "elevation_gain": 791.0,
+    "id": "18441626977",
+    "moving_time": 15688.0,
+    "name": "Wakefield Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-09T07:58:17Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-10",
+    "distance": 33298.0,
+    "elevation_gain": 0.0,
+    "id": "18451682767",
+    "moving_time": 4779.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-10T07:02:58Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-10",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18451703476",
+    "moving_time": 4445.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-10T07:08:24Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-10",
+    "distance": 16043.0,
+    "elevation_gain": 87.0,
+    "id": "18453447864",
+    "moving_time": 6604.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-10T08:36:06Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
