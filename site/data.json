@@ -7910,6 +7910,33 @@
       "type": "Ride",
       "url": "https://www.strava.com/activities/18529332890",
       "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 7,
+      "name": "Final FTP test!",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18541936712",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 7,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18541984633",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 8,
+      "name": "Morning Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18542449095",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14242,6 +14269,16 @@
           "distance": 13600.8,
           "elevation_gain": 53.0,
           "moving_time": 2033.0
+        },
+        "2026-05-17": {
+          "activity_ids": [
+            "18541936712",
+            "18541984633"
+          ],
+          "count": 2,
+          "distance": 24960.0,
+          "elevation_gain": 0.0,
+          "moving_time": 6805.0
         }
       },
       "Run": {
@@ -14631,6 +14668,15 @@
           "distance": 7869.6,
           "elevation_gain": 34.0,
           "moving_time": 2911.0
+        },
+        "2026-05-17": {
+          "activity_ids": [
+            "18542449095"
+          ],
+          "count": 1,
+          "distance": 5090.5,
+          "elevation_gain": 38.0,
+          "moving_time": 1887.0
         }
       },
       "Swim": {
@@ -15127,7 +15173,7 @@
       }
     }
   },
-  "generated_at": "2026-05-16T15:53:08.931500+00:00",
+  "generated_at": "2026-05-17T15:54:09.794304+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",

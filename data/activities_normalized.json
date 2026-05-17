@@ -11425,5 +11425,44 @@
     "start_date_local": "2026-05-16T08:37:58Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-05-17",
+    "distance": 24960.0,
+    "elevation_gain": 0.0,
+    "id": "18541936712",
+    "moving_time": 3505.0,
+    "name": "Final FTP test!",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-17T07:02:06Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-17",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18541984633",
+    "moving_time": 3300.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-17T07:06:02Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-17",
+    "distance": 5090.5,
+    "elevation_gain": 38.0,
+    "id": "18542449095",
+    "moving_time": 1887.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-17T08:03:37Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
