@@ -11464,5 +11464,57 @@
     "start_date_local": "2026-05-17T08:03:37Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 21026.0,
+    "elevation_gain": 0.0,
+    "id": "18574747309",
+    "moving_time": 2805.0,
+    "name": "Evening Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-19T18:03:17Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18574784614",
+    "moving_time": 2775.0,
+    "name": "Evening Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-19T18:04:22Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 5304.9,
+    "elevation_gain": 49.0,
+    "id": "18575152129",
+    "moving_time": 1879.0,
+    "name": "Evening Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-19T18:54:56Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-20",
+    "distance": 990.0,
+    "elevation_gain": 0.0,
+    "id": "18580970120",
+    "moving_time": 1128.0,
+    "name": "Morning Swim",
+    "raw_activity_type": "Swim",
+    "raw_type": "Swim",
+    "start_date_local": "2026-05-20T07:55:17Z",
+    "type": "Swim",
+    "year": 2026
   }
 ]

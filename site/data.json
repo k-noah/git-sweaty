@@ -7937,6 +7937,42 @@
       "type": "Run",
       "url": "https://www.strava.com/activities/18542449095",
       "year": 2026
+    },
+    {
+      "date": "2026-05-19",
+      "hour": 18,
+      "name": "Evening Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18574747309",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-19",
+      "hour": 18,
+      "name": "Evening Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18574784614",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-19",
+      "hour": 18,
+      "name": "Evening Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18575152129",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-20",
+      "hour": 7,
+      "name": "Morning Swim",
+      "subtype": "Swim",
+      "type": "Swim",
+      "url": "https://www.strava.com/activities/18580970120",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14279,6 +14315,16 @@
           "distance": 24960.0,
           "elevation_gain": 0.0,
           "moving_time": 6805.0
+        },
+        "2026-05-19": {
+          "activity_ids": [
+            "18574747309",
+            "18574784614"
+          ],
+          "count": 2,
+          "distance": 21026.0,
+          "elevation_gain": 0.0,
+          "moving_time": 5580.0
         }
       },
       "Run": {
@@ -14677,6 +14723,15 @@
           "distance": 5090.5,
           "elevation_gain": 38.0,
           "moving_time": 1887.0
+        },
+        "2026-05-19": {
+          "activity_ids": [
+            "18575152129"
+          ],
+          "count": 1,
+          "distance": 5304.9,
+          "elevation_gain": 49.0,
+          "moving_time": 1879.0
         }
       },
       "Swim": {
@@ -14994,6 +15049,15 @@
           "distance": 1650.0,
           "elevation_gain": 0.0,
           "moving_time": 1850.0
+        },
+        "2026-05-20": {
+          "activity_ids": [
+            "18580970120"
+          ],
+          "count": 1,
+          "distance": 990.0,
+          "elevation_gain": 0.0,
+          "moving_time": 1128.0
         }
       },
       "WeightTraining": {
@@ -15173,7 +15237,7 @@
       }
     }
   },
-  "generated_at": "2026-05-19T17:35:59.548817+00:00",
+  "generated_at": "2026-05-20T17:51:07.671889+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
