@@ -11555,5 +11555,44 @@
     "start_date_local": "2026-05-22T11:34:05Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-05-23",
+    "distance": 102518.0,
+    "elevation_gain": 433.0,
+    "id": "18624833027",
+    "moving_time": 16414.0,
+    "name": "Race weekend bib pickup and Carp ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-23T08:34:28Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-23",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18628879842",
+    "moving_time": 1311.0,
+    "name": "Night Yoga",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-05-23T21:46:50Z",
+    "type": "Yoga",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-24",
+    "distance": 21363.4,
+    "elevation_gain": 119.0,
+    "id": "18637185857",
+    "moving_time": 7234.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-24T09:31:23Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
