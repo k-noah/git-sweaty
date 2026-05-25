@@ -8022,7 +8022,7 @@
     {
       "date": "2026-05-24",
       "hour": 9,
-      "name": "Morning Run",
+      "name": "Race Weekend Half",
       "subtype": "Run",
       "type": "Run",
       "url": "https://www.strava.com/activities/18637185857",
@@ -15345,7 +15345,7 @@
       }
     }
   },
-  "generated_at": "2026-05-24T15:57:59.070693+00:00",
+  "generated_at": "2026-05-25T17:03:26.986395+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
