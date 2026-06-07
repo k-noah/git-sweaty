@@ -11737,5 +11737,44 @@
     "start_date_local": "2026-06-06T08:18:05Z",
     "type": "Swim",
     "year": 2026
+  },
+  {
+    "date": "2026-06-06",
+    "distance": 20013.7,
+    "elevation_gain": 163.0,
+    "id": "18814237532",
+    "moving_time": 8045.0,
+    "name": "Tremblant run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-06-06T11:57:00Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-07",
+    "distance": 59492.5,
+    "elevation_gain": 727.0,
+    "id": "18825746876",
+    "moving_time": 9638.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-07T08:17:25Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-07",
+    "distance": 5042.9,
+    "elevation_gain": 46.0,
+    "id": "18826527036",
+    "moving_time": 2068.0,
+    "name": "Lunch Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-06-07T11:13:12Z",
+    "type": "Run",
+    "year": 2026
   }
 ]

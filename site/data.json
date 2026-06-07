@@ -8126,6 +8126,33 @@
       "type": "Swim",
       "url": "https://www.strava.com/activities/18809901399",
       "year": 2026
+    },
+    {
+      "date": "2026-06-06",
+      "hour": 11,
+      "name": "Tremblant run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18814237532",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-07",
+      "hour": 8,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18825746876",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-07",
+      "hour": 11,
+      "name": "Lunch Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18826527036",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14533,6 +14560,15 @@
           "distance": 25016.6,
           "elevation_gain": 156.0,
           "moving_time": 3993.0
+        },
+        "2026-06-07": {
+          "activity_ids": [
+            "18825746876"
+          ],
+          "count": 1,
+          "distance": 59492.5,
+          "elevation_gain": 727.0,
+          "moving_time": 9638.0
         }
       },
       "Run": {
@@ -14986,6 +15022,24 @@
           "distance": 11874.6,
           "elevation_gain": 50.0,
           "moving_time": 4969.0
+        },
+        "2026-06-06": {
+          "activity_ids": [
+            "18814237532"
+          ],
+          "count": 1,
+          "distance": 20013.7,
+          "elevation_gain": 163.0,
+          "moving_time": 8045.0
+        },
+        "2026-06-07": {
+          "activity_ids": [
+            "18826527036"
+          ],
+          "count": 1,
+          "distance": 5042.9,
+          "elevation_gain": 46.0,
+          "moving_time": 2068.0
         }
       },
       "Swim": {
@@ -15527,7 +15581,7 @@
       }
     }
   },
-  "generated_at": "2026-06-06T16:03:18.323529+00:00",
+  "generated_at": "2026-06-07T16:10:17.156222+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
