@@ -8139,7 +8139,7 @@
     {
       "date": "2026-06-07",
       "hour": 8,
-      "name": "Morning Ride",
+      "name": "Monte Ryan - Duplessis - Monte Ryan",
       "subtype": "Ride",
       "type": "Ride",
       "url": "https://www.strava.com/activities/18825746876",
@@ -8148,7 +8148,7 @@
     {
       "date": "2026-06-07",
       "hour": 11,
-      "name": "Lunch Run",
+      "name": "5k Tremblant Brick",
       "subtype": "Run",
       "type": "Run",
       "url": "https://www.strava.com/activities/18826527036",
@@ -15581,7 +15581,7 @@
       }
     }
   },
-  "generated_at": "2026-06-07T16:10:17.156222+00:00",
+  "generated_at": "2026-06-08T17:47:33.074347+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
