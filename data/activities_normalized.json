@@ -11867,5 +11867,57 @@
     "start_date_local": "2026-06-13T09:35:58Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-06-13",
+    "distance": 4946.5,
+    "elevation_gain": 57.0,
+    "id": "18906503234",
+    "moving_time": 1834.0,
+    "name": "Lunch Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-06-13T12:12:23Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-14",
+    "distance": 29355.0,
+    "elevation_gain": 0.0,
+    "id": "18916781354",
+    "moving_time": 4229.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-14T07:31:05Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-14",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18916798731",
+    "moving_time": 4207.0,
+    "name": "Morning Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-14T07:31:31Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-14",
+    "distance": 15012.5,
+    "elevation_gain": 87.0,
+    "id": "18918376738",
+    "moving_time": 6160.0,
+    "name": "Post-bike Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-06-14T08:53:11Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
