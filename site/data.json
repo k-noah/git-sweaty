@@ -8261,6 +8261,42 @@
       "type": "Ride",
       "url": "https://www.strava.com/activities/18950944603",
       "year": 2026
+    },
+    {
+      "date": "2026-06-17",
+      "hour": 15,
+      "name": "Afternoon Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18963239499",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-17",
+      "hour": 16,
+      "name": "Afternoon Workout",
+      "subtype": "Workout",
+      "type": "Workout",
+      "url": "https://www.strava.com/activities/18963387587",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-17",
+      "hour": 15,
+      "name": "Afternoon Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18963387612",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-17",
+      "hour": 16,
+      "name": "Afternoon Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/18963387619",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14715,6 +14751,16 @@
           "distance": 17614.8,
           "elevation_gain": 111.0,
           "moving_time": 3043.0
+        },
+        "2026-06-17": {
+          "activity_ids": [
+            "18963239499",
+            "18963387612"
+          ],
+          "count": 2,
+          "distance": 27468.9,
+          "elevation_gain": 144.0,
+          "moving_time": 3940.0
         }
       },
       "Run": {
@@ -15222,6 +15268,15 @@
           "distance": 15012.5,
           "elevation_gain": 87.0,
           "moving_time": 6160.0
+        },
+        "2026-06-17": {
+          "activity_ids": [
+            "18963387619"
+          ],
+          "count": 1,
+          "distance": 2602.8,
+          "elevation_gain": 18.0,
+          "moving_time": 882.0
         }
       },
       "Swim": {
@@ -15633,6 +15688,17 @@
           "moving_time": 2387.0
         }
       },
+      "Workout": {
+        "2026-06-17": {
+          "activity_ids": [
+            "18963387587"
+          ],
+          "count": 1,
+          "distance": 28.4,
+          "elevation_gain": 0.0,
+          "moving_time": 57.0
+        }
+      },
       "Yoga": {
         "2026-01-12": {
           "activity_ids": [
@@ -15781,7 +15847,7 @@
       }
     }
   },
-  "generated_at": "2026-06-17T17:47:17.652765+00:00",
+  "generated_at": "2026-06-18T17:57:13.546574+00:00",
   "other_bucket": "OtherSports",
   "repo": "k-noah/git-sweaty",
   "source": "strava",
