@@ -12030,11 +12030,37 @@
     "elevation_gain": 0.0,
     "id": "19009693469",
     "moving_time": 3661.0,
-    "name": "Morning Swim",
+    "name": "Practice Race Day - 1/3 - Swim",
     "raw_activity_type": "Swim",
     "raw_type": "Swim",
     "start_date_local": "2026-06-21T06:28:15Z",
     "type": "Swim",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-21",
+    "distance": 102426.0,
+    "elevation_gain": 414.0,
+    "id": "19013548723",
+    "moving_time": 15329.0,
+    "name": "Practice Race Day - 2/3 - Bike",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-21T09:01:58Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-21",
+    "distance": 24070.7,
+    "elevation_gain": 182.0,
+    "id": "19015362827",
+    "moving_time": 10174.0,
+    "name": "Practice Race Day - 3/3 - Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-06-21T14:05:21Z",
+    "type": "Run",
     "year": 2026
   }
 ]
