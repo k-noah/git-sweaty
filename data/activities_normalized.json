@@ -12140,5 +12140,57 @@
     "start_date_local": "2026-06-28T10:21:20Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-06-30",
+    "distance": 17234.0,
+    "elevation_gain": 0.0,
+    "id": "19130113165",
+    "moving_time": 2396.0,
+    "name": "Indoor ride - Part 1",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-30T18:02:17Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-30",
+    "distance": 18827.0,
+    "elevation_gain": 0.0,
+    "id": "19130537605",
+    "moving_time": 2723.0,
+    "name": "Indoor ride - part 2",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-30T18:42:31Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-30",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "19130601678",
+    "moving_time": 4842.0,
+    "name": "Evening Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-30T18:07:22Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-07-01",
+    "distance": 6257.5,
+    "elevation_gain": 38.0,
+    "id": "19138530814",
+    "moving_time": 2620.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-07-01T10:19:32Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
